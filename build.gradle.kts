@@ -18,6 +18,7 @@ repositories {
 }
 
 dependencies {
+    implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
     implementation ("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 }
 

@@ -19,12 +19,13 @@ fun insertCountry(country: Country) {
     }
 
     fun insertCities(connection: Connection) {
-        val sql = "INSERT INTO city(NAME, MAIN_STREET) VALUES (?, ?)"
+        val sql = "INSERT INTO city(COUNTRY_ID, NAME, MAIN_STREET) VALUES (?, ?, ?)"
 
         country.cities.forEach { city ->
             connection.createPreparedStatementAndExecuteUpdate(sql, city) { ps, c ->
-                ps.setString(1, c.name)
-                ps.setString(2, c.mainStreet)
+                ps.setLong(1, 1L)
+                ps.setString(2, c.name)
+                ps.setString(3, c.mainStreet)
             }
         }
     }
@@ -54,7 +55,7 @@ fun getCitiesByCountryId(countryId: Long): List<City> {
         val result = mutableListOf<City>()
         while (rs.next()) {
             result.add(
-                City(rs.getString("<FIELD>"), rs.getString("<FIELD>"))
+                City(1L, rs.getString("<FIELD>"), rs.getString("<FIELD>"))
             )
         }
 
@@ -85,4 +86,3 @@ fun AutoCloseable.closeSilently() {
         //e.printStackTrace()
     }
 }
-
