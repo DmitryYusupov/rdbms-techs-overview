@@ -7,6 +7,7 @@ plugins {
 
     kotlin("jvm")
     kotlin("plugin.spring")
+    kotlin("plugin.jpa")
 }
 
 group = "ru.yusdm.lecture"
@@ -19,6 +20,7 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation ("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 }
 
