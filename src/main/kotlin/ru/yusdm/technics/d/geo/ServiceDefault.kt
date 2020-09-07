@@ -58,4 +58,30 @@ class ServiceDefault(private val repo: RepoDefault) {
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    fun getCitiesByCountryId3(countryId: Long): List<City> {
+        return repo.getCitiesByCountryIdWithQuery(countryId)
+    }
+
+
 }

@@ -23,7 +23,9 @@ class Application : CommandLineRunner{
         service.insertCity(city2)
 
 
-        service.getCitiesByCountryId2(country.id!!).forEach { println(it.id.toString() + " " + it.name) }
+        //service.getCitiesByCountryId(country.id!!).forEach { println(it.id.toString() + " " + it.name) }
+        //service.getCitiesByCountryId2(country.id!!).forEach { println(it.id.toString() + " " + it.name) }
+        //service.getCitiesByCountryId3(country.id!!).forEach { println(it.id.toString() + " " + it.name) }
     }
 
 }

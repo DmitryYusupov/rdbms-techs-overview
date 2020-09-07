@@ -18,4 +18,30 @@ class RepoDefault(private val em: EntityManager) {
         return em.find(Country::class.java, countryId).cities
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    fun getCitiesByCountryIdWithQuery(countryId: Long): List<City> {
+        val query = em.createQuery("SELECT c from City c WHERE c.country.id = :countryId", City::class.java)
+        query.setParameter("countryId", countryId)
+
+        return query.resultList
+    }
+
 }
