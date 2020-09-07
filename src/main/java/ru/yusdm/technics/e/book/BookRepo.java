@@ -1,4 +1,4 @@
-package ru.yusdm.technics.d.book;
+package ru.yusdm.technics.e.book;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

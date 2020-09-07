@@ -1,4 +1,4 @@
-package ru.yusdm.technics.d.book;
+package ru.yusdm.technics.e.book;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

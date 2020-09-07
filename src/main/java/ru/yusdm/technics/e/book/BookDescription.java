@@ -1,9 +1,6 @@
-package ru.yusdm.technics.d.book;
-
-import org.hibernate.annotations.GenericGenerator;
+package ru.yusdm.technics.e.book;
 
 import javax.persistence.*;
-import java.util.UUID;
 
 @Entity
 public class BookDescription {
