@@ -18,3 +18,4 @@ pluginManagement {
         kotlin("plugin.jpa") version kotlinPluginJpa
     }
 }
+include("code-generator-strategy")

@@ -1,0 +1,12 @@
+apply plugin: 'java'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation 'org.jooq:jooq-codegen:3.13.4'
+}
+
+group 'ru.yusdm.lecture'
+version '0.0.1'
