@@ -34,7 +34,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-validation")
 
     implementation("org.jooq:jooq-codegen")
-    implementation ("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
     implementation("org.springframework.boot:spring-boot-starter-webflux")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
@@ -66,7 +66,7 @@ jooq {
 
     configurations {
         create("main") {  // name of the jOOQ configuration
-            generateSchemaSourceOnCompilation.set(true)  // default (can be omitted)
+            generateSchemaSourceOnCompilation.set(false)  // default (can be omitted)
 
             jooqConfiguration.apply {
                 logging = org.jooq.meta.jaxb.Logging.WARN
