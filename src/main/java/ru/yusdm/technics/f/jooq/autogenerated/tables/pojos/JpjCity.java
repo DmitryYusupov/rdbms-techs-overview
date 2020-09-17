@@ -41,6 +41,17 @@ public class JpjCity implements Serializable {
         this.countryId = countryId;
     }
 
+   public JpjCity(
+        String mainStreet,
+        String name,
+        Long   countryId
+    ) {
+        this.id = null;
+        this.mainStreet = mainStreet;
+        this.name = name;
+        this.countryId = countryId;
+    }
+
     public Long getId() {
         return this.id;
     }

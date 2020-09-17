@@ -38,6 +38,15 @@ public class JpjCountry implements Serializable {
         this.population = population;
     }
 
+    public JpjCountry(
+        String  name,
+        Integer population
+    ) {
+        this.id = null;
+        this.name = name;
+        this.population = population;
+    }
+
     public Long getId() {
         return this.id;
     }
