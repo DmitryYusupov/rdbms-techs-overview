@@ -5,7 +5,14 @@ import org.springframework.transaction.annotation.Transactional
 
 @Service
 @Transactional
-class ServiceDefault(private val repo: RepoDefault) {
+class ServiceDefault(
+    private val repo: RepoDefault,
+    private val repoSpringData: RepoSpringData
+) {
+
+    fun insertCountryWithSpringData(country: Country) {
+        repoSpringData.save(country)
+    }
 
     fun insertCountry(country: Country) {
         repo.insertCountry(country)

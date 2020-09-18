@@ -31,7 +31,13 @@ fun insertCountry(country: Country) {
         if (country.cities.isNotEmpty()) {
             val sql = "INSERT INTO city(COUNTRY_ID, NAME, MAIN_STREET) VALUES (:countryId, :name, :street)"
             jdbcTemplate.batchUpdate(sql, country.cities.asSequence()
-                .map { mapOf("countryId" to country.id, "name" to it.name, "street" to it.mainStreet) }
+                .map {
+                    mapOf(
+                        "countryId" to country.id,
+                        "name" to it.name,
+                        "street" to it.mainStreet
+                    )
+                }
                 .toList().toTypedArray()
             )
         }

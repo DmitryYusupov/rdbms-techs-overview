@@ -48,7 +48,7 @@ fun getCitiesByCountryId(countryId: Long): List<City> {
 
     return try {
         connection = getConnection()
-        val sql = "SELECT ct.* FROM country cntr INNER JOIN CITY ct ON (ct.COUNTRY_ID = cntr.ID) WHERE cntr.ID = ?"
+        val sql = "SELECT ct.* FROM country cntr INNER JOIN city ct ON (ct.COUNTRY_ID = cntr.ID) WHERE cntr.ID = ?"
         ps = connection.prepareStatement(sql)
         rs = ps.executeQuery()
 
