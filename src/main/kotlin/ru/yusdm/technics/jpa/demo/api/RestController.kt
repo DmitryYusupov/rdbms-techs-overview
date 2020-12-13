@@ -21,4 +21,9 @@ class RestController(private val personService: PersonService) {
     fun getNonLocking() : PersonDto {
         return personService.getById(1L).toDto()
     }
+
+    @GetMapping("/update")
+    fun getUpdate() : PersonDto {
+        return personService.updateById(1L).toDto()
+    }
 }

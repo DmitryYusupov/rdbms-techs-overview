@@ -9,7 +9,7 @@ import javax.persistence.LockModeType
 @Repository
 interface PersonRepo : JpaRepository<Person, Long> {
 
-    @Lock(LockModeType.PESSIMISTIC_WRITE)
+    @Lock(LockModeType.PESSIMISTIC_READ)
     @Query("SELECT p FROM Person p where p.id = :id")
     fun getByIdWithLock(id: Long): Person
 }
