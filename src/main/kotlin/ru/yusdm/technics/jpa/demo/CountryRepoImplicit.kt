@@ -1,10 +1,10 @@
-package ru.yusdm.technics.jpa.geo
+package ru.yusdm.technics.jpa.demo
 
 import org.springframework.stereotype.Repository
 import javax.persistence.EntityManager
 
 @Repository
-class RepoDefault(private val em: EntityManager) {
+class CountryRepoImplicit(private val em: EntityManager) {
 
     fun insertCountry(country: Country) {
         em.persist(country)

@@ -1,6 +1,24 @@
-package ru.yusdm.technics.jpa.geo
+package ru.yusdm.technics.jpa.demo
 
 import javax.persistence.*
+
+@Entity
+@Table
+class Person (
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false, updatable = false, unique = true)
+    var id: Long? = null,
+
+    var name: String
+)
+
+data class PersonDto(val id: Long, val name: String)
+
+fun Person.toDto() : PersonDto {
+    return PersonDto(this.id!!, this.name)
+}
+
 
 @Entity
 @Table
