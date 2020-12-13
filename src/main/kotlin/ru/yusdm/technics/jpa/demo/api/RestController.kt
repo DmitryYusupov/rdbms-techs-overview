@@ -22,8 +22,22 @@ class RestController(private val personService: PersonService) {
         return personService.getById(1L).toDto()
     }
 
+    @GetMapping("/locking2")
+    fun getLocking2() : PersonDto {
+        return personService.getByIdWithLock2(1L).toDto()
+    }
+
     @GetMapping("/update")
     fun getUpdate() : PersonDto {
         return personService.updateById(1L).toDto()
     }
 }
+
+/*
+
+[APP _1 [update, send JMS..................................|...]]
+
+                           [JMS]->[1L -> getById]--------------> []
+                           [JMS]->[1L -> getById]--> []
+
+ */

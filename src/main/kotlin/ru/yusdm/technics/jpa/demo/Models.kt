@@ -9,7 +9,6 @@ class Person (
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, updatable = false, unique = true)
     var id: Long? = null,
-
     var name: String
 )
 
