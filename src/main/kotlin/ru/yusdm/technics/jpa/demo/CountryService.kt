@@ -7,14 +7,22 @@ import org.springframework.transaction.annotation.Transactional
 @Transactional
 class CountryService(private val repo: CountryRepoImplicit, private val countryRepo: CountryRepo) {
 
+    fun findCountryWithCitiesById(id: Long) : List<Country> {
+        val tt =  countryRepo.findCountryWithCitiesById(id)
+        tt.forEach {
+            it.cities.size
+        }
+
+        return tt
+    }
+
     fun getById(id: Long) : Country {
         return countryRepo.getOne(id)
     }
 
     fun getByIdWithLock(id: Long): Country {
-
         val result =  countryRepo.getByIdWithLock(id)
-        Thread.sleep(5000)
+        Thread.sleep(15000)
         return result
     }
 

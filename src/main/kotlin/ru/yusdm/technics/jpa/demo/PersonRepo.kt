@@ -11,9 +11,18 @@ interface PersonRepo : JpaRepository<Person, Long> {
 
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     @Query("SELECT p FROM Person p where p.id = :id")
-    fun getByIdWithLock(id: Long): Person
+    fun getByIdWithWriteLock(id: Long): Person
+
+    //@Lock(LockModeType.PESSIMISTIC_READ)
+    //@Query("SELECT p FROM Person p where p.id = :id")
+    @Query(nativeQuery = true, value = "SELECT * FROM Person where id = :id for update")
+    fun getByIdWithReadLock(id: Long): Person
+
+    @Lock(LockModeType.PESSIMISTIC_WRITE)
+    @Query("SELECT p FROM Person p")
+    fun getAllWithLockWrite() : List<Person>
 
     @Lock(LockModeType.PESSIMISTIC_READ)
-    @Query("SELECT p FROM Person p where p.id = :id")
-    fun getByIdWithLock2(id: Long): Person
+    @Query("SELECT p FROM Person p")
+    fun getAllWithLockRead() : List<Person>
 }

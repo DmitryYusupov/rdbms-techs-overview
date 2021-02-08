@@ -30,7 +30,7 @@ class Application : CommandLineRunner{
         val city2 = City(null, country, "street_2", "mainStreet_2")
         countryService.insertCity(city)
         countryService.insertCity(city2)
-
+        val countries = countryService.findCountryWithCitiesById(country.id!!)
         personService.save(Person(null, "TestPerson"))
 
         //service.getCitiesByCountryId(country.id!!).forEach { println(it.id.toString() + " " + it.name) }

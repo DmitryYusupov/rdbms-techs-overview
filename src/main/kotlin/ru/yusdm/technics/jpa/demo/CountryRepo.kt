@@ -13,4 +13,8 @@ interface CountryRepo : JpaRepository<Country, Long> {
     @Query("SELECT c FROM Country c where c.id = :id")
     fun getByIdWithLock(id: Long): Country
 
+
+    @Query("SELECT country FROM Country country JOIN City city on country.id = city.country.id")
+    fun findCountryWithCitiesById(id: Long): List<Country>
+
 }
